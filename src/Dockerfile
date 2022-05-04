@@ -1,7 +1,7 @@
-FROM node:14.17.5
+FROM node:17.3.1
 WORKDIR /app
-COPY package*.json ./ 
-RUN npm i
-COPY . /app
+COPY ./package*.json ./
+RUN npm install
+COPY . .
 EXPOSE 8181
-CMD ["node", "server.js"]
+CMD [ "node", "./server.js" ]
